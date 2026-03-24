@@ -1,0 +1,13 @@
+# Office documents — always treat as binary to prevent corruption on download
+*.docx  binary
+*.xlsx  binary
+*.xls   binary
+*.pptx  binary
+*.pdf   binary
+
+# Web assets — text with LF line endings
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.md    text eol=lf
+*.svg   text eol=lf
