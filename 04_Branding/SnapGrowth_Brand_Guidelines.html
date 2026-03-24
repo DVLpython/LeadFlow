@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnapGrowth — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral:       #FF6B5E;
+  --coral-deep:  #E5503F;
+  --amber:       #FFAB5E;
+  --amber-deep:  #E8903F;
+  --blush:       #FFD4C8;
+  --blush-pale:  #FFF0EB;
+  --sage:        #A8D5BA;
+  --sage-pale:   #E4F4EB;
+  --lavender:    #C9B8E8;
+  --lav-pale:    #EDE8F8;
+  --cream:       #FFF8F3;
+  --warm-white:  #FFFCFA;
+  --charcoal:    #2C2826;
+  --smoke:       #8C7B75;
+  --mist:        #C4B5AF;
+  --rule:        rgba(44,40,38,0.10);
+  --shadow-warm: 0 4px 24px rgba(255,107,94,0.12);
+  --shadow-soft: 0 2px 16px rgba(44,40,38,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══ TYPOGRAPHY SYSTEM ══ */
+.f-display { font-family: 'Fraunces', serif; }
+.f-body     { font-family: 'Outfit', sans-serif; }
+
+/* ══ COVER ══ */
+.cover {
+  min-height: 100vh;
+  background: var(--charcoal);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+  overflow: hidden;
+}
+.cover-bg-shapes {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.cover-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+.blob-1 { width: 600px; height: 600px; background: var(--coral); top: -200px; right: -100px; }
+.blob-2 { width: 400px; height: 400px; background: var(--amber); bottom: -100px; left: 50px; }
+.blob-3 { width: 250px; height: 250px; background: var(--sage); top: 40%; left: 40%; }
+
+.cover-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 72px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 64px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+}
+.cover-logo-mark {
+  width: 64px; height: 64px;
+  flex-shrink: 0;
+}
+.cover-wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.cover-wordmark span { color: var(--coral); }
+
+.cover-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: white;
+  margin-bottom: 32px;
+  animation: riseIn 0.9s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+}
+.cover-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--blush);
+}
+
+.cover-desc {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  line-height: 1.75;
+  animation: riseIn 0.9s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.cover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 72px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: relative; z-index: 1;
+  flex-wrap: wrap; gap: 12px;
+  animation: riseIn 0.9s 0.3s cubic-bezier(0.22,1,0.36,1) both;
+}
+.cover-footer-item {
+  display: flex; flex-direction: column; gap: 3px;
+}
+.cover-footer-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.cover-footer-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══ NAVIGATION ══ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,248,243,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 72px;
+  display: flex; align-items: center; gap: 0;
+  height: 56px;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; margin-right: 40px; }
+.nav-logo svg { width: 28px; height: 28px; }
+.nav-logo-text {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; font-weight: 700;
+  letter-spacing: -0.02em; color: var(--charcoal);
+}
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-link {
+  font-size: 13px; font-weight: 500;
+  color: var(--smoke);
+  padding: 6px 14px; border-radius: 6px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--coral); background: var(--blush-pale); }
+.nav-badge {
+  margin-left: auto;
+  font-size: 11px; font-weight: 600;
+  padding: 4px 12px; border-radius: 20px;
+  background: var(--coral); color: white;
+  letter-spacing: 0.05em;
+}
+
+/* ══ PAGE LAYOUT ══ */
+.page { max-width: 1120px; margin: 0 auto; padding: 80px 72px; }
+.section { margin-bottom: 96px; }
+
+.section-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px;
+}
+.section-num {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--coral);
+  background: var(--blush-pale);
+  padding: 4px 10px; border-radius: 20px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.section-desc {
+  font-size: 15px; font-weight: 300;
+  color: var(--smoke); max-width: 560px;
+  line-height: 1.75; margin-bottom: 48px;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 80px 0;
+}
+
+/* ══ LOGO SHOWCASE ══ */
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.logo-cell {
+  border-radius: 20px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.logo-cell-label {
+  position: absolute;
+  top: 20px; left: 24px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.logo-cell-light { background: var(--warm-white); border: 1.5px solid var(--rule); }
+.logo-cell-light .logo-cell-label { color: var(--mist); }
+.logo-cell-dark { background: var(--charcoal); }
+.logo-cell-dark .logo-cell-label { color: rgba(255,255,255,0.3); }
+.logo-cell-coral { background: var(--coral); }
+.logo-cell-coral .logo-cell-label { color: rgba(255,255,255,0.5); }
+.logo-cell-blush { background: var(--blush); border: 1.5px solid rgba(255,107,94,0.15); }
+.logo-cell-blush .logo-cell-label { color: rgba(255,107,94,0.5); }
+
+.logo-lockup {
+  display: flex; align-items: center; gap: 14px;
+}
+.logo-mark-lg { width: 56px; height: 56px; }
+.logo-mark-sm { width: 40px; height: 40px; }
+.logo-wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 28px; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1;
+}
+.wm-dark { color: var(--charcoal); }
+.wm-dark span { color: var(--coral); }
+.wm-light { color: white; }
+.wm-light span { color: rgba(255,255,255,0.65); }
+.wm-coral-bg { color: white; }
+.wm-coral-bg span { color: rgba(255,255,255,0.6); }
+
+/* Symbol grid */
+.symbol-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 16px;
+}
+.symbol-cell {
+  border-radius: 16px; padding: 32px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  border: 1.5px solid var(--rule);
+}
+.symbol-cell-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--smoke);
+  text-align: center;
+}
+.symbol-cell-note {
+  font-size: 11px; color: var(--mist);
+  text-align: center; line-height: 1.5;
+}
+.sym-bg-white { background: var(--warm-white); }
+.sym-bg-cream { background: var(--cream); }
+.sym-bg-dark  { background: var(--charcoal); }
+.sym-bg-coral { background: var(--coral); }
+
+/* ══ COLOR SYSTEM ══ */
+.palette-primary {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px; margin-bottom: 16px;
+}
+.palette-extended {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.color-swatch {
+  border-radius: 16px; overflow: hidden;
+  border: 1.5px solid rgba(44,40,38,0.06);
+  transition: transform 0.2s;
+}
+.color-swatch:hover { transform: translateY(-4px); }
+.swatch-block { height: 140px; }
+.swatch-info { padding: 16px; background: white; }
+.swatch-name {
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 2px;
+}
+.swatch-hex {
+  font-family: 'Outfit', monospace;
+  font-size: 12px; font-weight: 500; color: var(--smoke);
+}
+.swatch-use {
+  font-size: 11px; color: var(--mist);
+  margin-top: 4px; line-height: 1.4;
+}
+
+/* larger primary swatch */
+.swatch-primary .swatch-block { height: 220px; }
+.swatch-primary .swatch-info { padding: 20px; }
+.swatch-primary .swatch-name { font-size: 18px; }
+.swatch-primary .swatch-hex { font-size: 13px; }
+
+/* color usage rules */
+.color-usage {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 32px;
+}
+.usage-card {
+  background: white; border-radius: 16px;
+  padding: 24px; border: 1.5px solid var(--rule);
+}
+.usage-card-title {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 8px;
+}
+.usage-card-body { font-size: 13px; color: var(--smoke); line-height: 1.6; }
+.usage-dot {
+  width: 24px; height: 24px; border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+/* ══ TYPOGRAPHY SYSTEM ══ */
+.type-showcase {
+  background: var(--warm-white);
+  border: 1.5px solid var(--rule);
+  border-radius: 20px; padding: 48px;
+  margin-bottom: 16px;
+}
+.type-family-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--coral); margin-bottom: 20px;
+}
+.type-name {
+  font-size: 13px; font-weight: 600;
+  color: var(--smoke); margin-top: 8px;
+}
+.type-specimen-fraunces {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--charcoal);
+}
+.type-specimen-fraunces em {
+  font-style: italic; font-weight: 300;
+  color: var(--coral);
+}
+.type-specimen-outfit {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px; font-weight: 300;
+  line-height: 1.7;
+  color: var(--smoke);
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.type-scale {
+  display: grid; gap: 0;
+}
+.type-scale-row {
+  display: grid; grid-template-columns: 100px 1fr 100px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  gap: 24px;
+}
+.type-scale-row:last-child { border-bottom: none; }
+.type-scale-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mist);
+}
+.type-scale-size {
+  font-size: 11px; color: var(--mist);
+  text-align: right; white-space: nowrap;
+}
+
+/* ══ LOGO USAGE ══ */
+.clearspace-demo {
+  background: var(--warm-white);
+  border: 1.5px solid var(--rule);
+  border-radius: 20px; padding: 48px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px; position: relative;
+}
+.clearspace-inner {
+  position: relative;
+  border: 2px dashed var(--blush);
+  padding: 32px;
+  border-radius: 4px;
+}
+.clearspace-x-labels {
+  position: absolute; bottom: -24px; left: 0; right: 0;
+  text-align: center; font-size: 11px; color: var(--coral);
+  font-weight: 600;
+}
+.clearspace-y-labels {
+  position: absolute; top: 0; bottom: 0; left: -24px;
+  display: flex; align-items: center;
+  font-size: 11px; color: var(--coral); font-weight: 600;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+}
+
+.usage-dos-donts {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 32px;
+}
+.dos-card {
+  border-radius: 16px; padding: 28px;
+  border: 1.5px solid rgba(168,213,186,0.4);
+  background: var(--sage-pale);
+}
+.donts-card {
+  border-radius: 16px; padding: 28px;
+  border: 1.5px solid rgba(255,107,94,0.2);
+  background: var(--blush-pale);
+}
+.usage-card-heading {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 20px;
+}
+.usage-check { color: #4CAF50; font-size: 18px; }
+.usage-cross  { color: var(--coral); font-size: 18px; }
+.usage-rule {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--smoke);
+  margin-bottom: 10px; line-height: 1.5;
+}
+.usage-rule::before {
+  content: '•'; flex-shrink: 0; margin-top: 1px;
+}
+
+/* ══ BRAND VOICE ══ */
+.voice-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-bottom: 32px;
+}
+.voice-card {
+  background: white; border-radius: 16px;
+  padding: 28px; border: 1.5px solid var(--rule);
+  position: relative; overflow: hidden;
+}
+.voice-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.vc-1::before { background: var(--coral); }
+.vc-2::before { background: var(--amber); }
+.vc-3::before { background: var(--sage); }
+.voice-trait {
+  font-family: 'Fraunces', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 8px; margin-top: 16px;
+}
+.voice-not {
+  font-size: 12px; font-weight: 500;
+  color: var(--mist); margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.voice-desc { font-size: 13px; color: var(--smoke); line-height: 1.65; }
+
+.tone-examples {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.tone-example {
+  background: white; border-radius: 16px;
+  border: 1.5px solid var(--rule); overflow: hidden;
+}
+.tone-example-header {
+  padding: 14px 20px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  border-bottom: 1px solid var(--rule);
+}
+.tone-do-header   { color: #4CAF50; background: var(--sage-pale); }
+.tone-dont-header { color: var(--coral); background: var(--blush-pale); }
+.tone-example-body {
+  padding: 20px;
+  font-size: 14px; line-height: 1.7;
+  color: var(--charcoal);
+  font-style: italic;
+}
+
+/* ══ APPLICATIONS ══ */
+/* Email signature */
+.email-sig-demo {
+  background: white; border-radius: 20px;
+  padding: 48px; border: 1.5px solid var(--rule);
+  margin-bottom: 16px;
+}
+.sig-wrapper {
+  border-left: 3px solid var(--coral);
+  padding-left: 20px;
+  max-width: 400px;
+}
+.sig-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 2px;
+}
+.sig-title { font-size: 13px; color: var(--smoke); margin-bottom: 12px; }
+.sig-divider {
+  width: 32px; height: 2px;
+  background: var(--coral); border-radius: 2px;
+  margin-bottom: 12px;
+}
+.sig-detail { font-size: 12px; color: var(--smoke); margin-bottom: 4px; }
+.sig-detail a { color: var(--coral); text-decoration: none; }
+.sig-logo-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 16px;
+}
+.sig-logo-text {
+  font-family: 'Fraunces', serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--charcoal); letter-spacing: -0.02em;
+}
+.sig-logo-text span { color: var(--coral); }
+.sig-tagline {
+  font-size: 11px; color: var(--mist);
+  margin-left: 4px; letter-spacing: 0.05em;
+}
+
+/* Favicon / app icon */
+.icon-sizes {
+  display: flex; align-items: flex-end; gap: 20px;
+  flex-wrap: wrap;
+}
+.icon-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.icon-item-label { font-size: 11px; color: var(--mist); text-align: center; }
+
+/* Business card */
+.card-demo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.biz-card {
+  border-radius: 16px;
+  aspect-ratio: 1.75;
+  padding: 28px 32px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; position: relative;
+}
+.biz-card-front { background: var(--charcoal); }
+.biz-card-back  {
+  background: var(--cream);
+  border: 1.5px solid var(--rule);
+}
+.biz-card-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+.biz-card-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 700;
+  color: white; letter-spacing: -0.02em;
+  position: relative; z-index: 1;
+}
+.biz-card-title {
+  font-size: 11px; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-top: 4px; position: relative; z-index: 1;
+}
+.biz-card-contact {
+  position: relative; z-index: 1;
+}
+.biz-card-contact div {
+  font-size: 11px; color: rgba(255,255,255,0.55);
+  margin-bottom: 2px;
+}
+.biz-card-back-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.biz-card-back-wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--charcoal); letter-spacing: -0.03em;
+}
+.biz-card-back-wordmark span { color: var(--coral); }
+.biz-card-back-tagline {
+  font-size: 11px; color: var(--smoke);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+}
+.biz-card-back-url {
+  font-size: 12px; font-weight: 500;
+  color: var(--coral);
+}
+
+/* ══ FOOTER ══ */
+.doc-footer {
+  background: var(--charcoal);
+  padding: 32px 72px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.footer-wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; font-weight: 700;
+  color: white; letter-spacing: -0.02em;
+}
+.footer-wordmark span { color: var(--coral); }
+.footer-text { font-size: 12px; color: rgba(255,255,255,0.3); }
+.footer-text strong { color: var(--coral); }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 768px) {
+  .cover-inner, .nav, .page, .doc-footer { padding-left: 28px; padding-right: 28px; }
+  .logo-grid, .palette-primary, .palette-extended,
+  .card-demo, .usage-dos-donts, .tone-examples,
+  .voice-grid, .color-usage, .symbol-grid { grid-template-columns: 1fr 1fr; }
+  .symbol-grid { grid-template-columns: repeat(2,1fr); }
+  .nav-links { display: none; }
+  .type-scale-row { grid-template-columns: 80px 1fr; }
+  .type-scale-size { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══ -->
+<div class="cover">
+  <div class="cover-bg-shapes">
+    <div class="cover-blob blob-1"></div>
+    <div class="cover-blob blob-2"></div>
+    <div class="cover-blob blob-3"></div>
+  </div>
+  <div class="cover-inner">
+    <div class="cover-logo-lockup">
+      <!-- Logo mark -->
+      <svg class="cover-logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cg" x1="0" y1="1" x2="1" y2="0" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stop-color="#FF6B5E"/>
+            <stop offset="100%" stop-color="#FFAB5E"/>
+          </linearGradient>
+        </defs>
+        <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#cg)"/>
+        <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="cover-wordmark">Snap<span>Growth</span></div>
+    </div>
+    <h1 class="cover-title">Brand<br><em>Guidelines</em></h1>
+    <p class="cover-desc">The visual identity system for SnapGrowth — a warm, energetic brand built for the B2B growth consultancy that guarantees results.</p>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-item"><span class="cover-footer-label">Version</span><span class="cover-footer-value">1.0</span></div>
+    <div class="cover-footer-item"><span class="cover-footer-label">Initiative</span><span class="cover-footer-value">JigsawAI</span></div>
+    <div class="cover-footer-item"><span class="cover-footer-label">Lead</span><span class="cover-footer-value">De Villiers</span></div>
+    <div class="cover-footer-item"><span class="cover-footer-label">Domain</span><span class="cover-footer-value">snapgrowth.ai</span></div>
+    <div class="cover-footer-item"><span class="cover-footer-label">Date</span><span class="cover-footer-value">March 2026</span></div>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-logo">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="ng" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+      <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#ng)"/>
+      <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="nav-logo-text">SnapGrowth</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="#logo">Logo</a>
+    <a class="nav-link" href="#colors">Colors</a>
+    <a class="nav-link" href="#typography">Typography</a>
+    <a class="nav-link" href="#usage">Usage</a>
+    <a class="nav-link" href="#voice">Voice</a>
+    <a class="nav-link" href="#applications">Applications</a>
+  </div>
+  <span class="nav-badge">V1.0</span>
+</nav>
+
+<div class="page">
+
+  <!-- ══ SECTION 01: THE LOGO ══ -->
+  <div class="section" id="logo">
+    <div class="section-eyebrow"><span class="section-num">01</span></div>
+    <h2 class="section-title">The Logo</h2>
+    <p class="section-desc">The SnapGrowth mark combines a warm rounded square with a characteristic growth line — an upward trajectory with a signature "snap" jog that references connection, momentum, and the JigsawAI puzzle lineage.</p>
+
+    <!-- Primary lockups -->
+    <div class="logo-grid">
+      <div class="logo-cell logo-cell-light">
+        <span class="logo-cell-label">Primary — Light Background</span>
+        <div class="logo-lockup">
+          <svg class="logo-mark-lg" viewBox="0 0 64 64" fill="none">
+            <defs><linearGradient id="lg1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+            <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#lg1)"/>
+            <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="logo-wordmark wm-dark">Snap<span>Growth</span></div>
+        </div>
+      </div>
+      <div class="logo-cell logo-cell-dark">
+        <span class="logo-cell-label">Primary — Dark Background</span>
+        <div class="logo-lockup">
+          <svg class="logo-mark-lg" viewBox="0 0 64 64" fill="none">
+            <defs><linearGradient id="lg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+            <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#lg2)"/>
+            <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="logo-wordmark wm-light">Snap<span>Growth</span></div>
+        </div>
+      </div>
+      <div class="logo-cell logo-cell-coral">
+        <span class="logo-cell-label">On Coral</span>
+        <div class="logo-lockup">
+          <svg class="logo-mark-lg" viewBox="0 0 64 64" fill="none">
+            <rect x="3" y="3" width="58" height="58" rx="16" fill="rgba(255,255,255,0.2)"/>
+            <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="logo-wordmark wm-coral-bg">Snap<span>Growth</span></div>
+        </div>
+      </div>
+      <div class="logo-cell logo-cell-blush">
+        <span class="logo-cell-label">On Blush Pastel</span>
+        <div class="logo-lockup">
+          <svg class="logo-mark-lg" viewBox="0 0 64 64" fill="none">
+            <defs><linearGradient id="lg4" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+            <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#lg4)"/>
+            <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="logo-wordmark wm-dark">Snap<span>Growth</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Symbol mark only -->
+    <div class="section-eyebrow" style="margin-top:48px;margin-bottom:12px;"><span class="section-num" style="background:var(--lav-pale);color:var(--lavender);">Symbol</span></div>
+    <p style="font-size:14px;color:var(--smoke);margin-bottom:20px;max-width:480px;">The symbol mark can be used independently as an app icon, favicon, or avatar where the wordmark cannot fit.</p>
+    <div class="symbol-grid">
+      <div class="symbol-cell sym-bg-white">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+          <defs><linearGradient id="sg1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+          <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#sg1)"/>
+          <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="symbol-cell-label">On White</span>
+      </div>
+      <div class="symbol-cell sym-bg-dark">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+          <defs><linearGradient id="sg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+          <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#sg2)"/>
+          <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="symbol-cell-label" style="color:rgba(255,255,255,0.4)">On Dark</span>
+      </div>
+      <div class="symbol-cell sym-bg-coral">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+          <rect x="3" y="3" width="58" height="58" rx="16" fill="rgba(255,255,255,0.2)"/>
+          <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="symbol-cell-label" style="color:rgba(255,255,255,0.5)">On Coral</span>
+      </div>
+      <div class="symbol-cell sym-bg-cream">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+          <defs><linearGradient id="sg4" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs>
+          <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#sg4)"/>
+          <polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="symbol-cell-label">On Cream</span>
+      </div>
+    </div>
+
+    <!-- Icon sizes -->
+    <div style="margin-top:32px;background:var(--warm-white);border:1.5px solid var(--rule);border-radius:16px;padding:32px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:24px;">SIZE SCALE</div>
+      <div class="icon-sizes">
+        <div class="icon-item">
+          <svg width="80" height="80" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="is1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#is1)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="icon-item-label">80px<br>Profile</span>
+        </div>
+        <div class="icon-item">
+          <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="is2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#is2)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="icon-item-label">48px<br>App icon</span>
+        </div>
+        <div class="icon-item">
+          <svg width="32" height="32" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="is3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#is3)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="icon-item-label">32px<br>Nav</span>
+        </div>
+        <div class="icon-item">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="is4" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#is4)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="icon-item-label">20px<br>Inline</span>
+        </div>
+        <div class="icon-item">
+          <svg width="16" height="16" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="is5" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="14" fill="url(#is5)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="icon-item-label">16px<br>Favicon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION 02: COLORS ══ -->
+  <div class="section" id="colors">
+    <div class="section-eyebrow"><span class="section-num">02</span></div>
+    <h2 class="section-title">Color System</h2>
+    <p class="section-desc">A warm, pastel-forward palette built on coral energy and amber warmth. Blush and sage provide breathing room. Every color is chosen to feel approachable and human — not cold, corporate, or generic.</p>
+
+    <!-- Primary palette -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;">PRIMARY PALETTE</div>
+    <div class="palette-primary">
+      <div class="color-swatch swatch-primary">
+        <div class="swatch-block" style="background:linear-gradient(135deg,#FF6B5E 0%,#FFAB5E 100%);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Snap Coral</div>
+          <div class="swatch-hex">#FF6B5E → #FFAB5E</div>
+          <div class="swatch-use">Logo gradient, primary CTAs, key highlights</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FF6B5E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Coral</div>
+          <div class="swatch-hex">#FF6B5E</div>
+          <div class="swatch-use">Primary accent, links, icons</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFAB5E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amber</div>
+          <div class="swatch-hex">#FFAB5E</div>
+          <div class="swatch-use">Secondary accent, warmth, highlights</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#2C2826;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Charcoal</div>
+          <div class="swatch-hex">#2C2826</div>
+          <div class="swatch-use">Body text, dark backgrounds</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extended palette -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;margin-top:32px;">EXTENDED PALETTE</div>
+    <div class="palette-extended">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFD4C8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blush</div>
+          <div class="swatch-hex">#FFD4C8</div>
+          <div class="swatch-use">Pastel backgrounds, soft highlights</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFF0EB;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blush Pale</div>
+          <div class="swatch-hex">#FFF0EB</div>
+          <div class="swatch-use">Card backgrounds, callout fills</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#A8D5BA;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sage</div>
+          <div class="swatch-hex">#A8D5BA</div>
+          <div class="swatch-use">Positive states, success, contrast</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFF8F3;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream</div>
+          <div class="swatch-hex">#FFF8F3</div>
+          <div class="swatch-use">Page backgrounds, warm white</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#8C7B75;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Smoke</div>
+          <div class="swatch-hex">#8C7B75</div>
+          <div class="swatch-use">Secondary text, captions, labels</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color usage -->
+    <div class="color-usage">
+      <div class="usage-card">
+        <div class="usage-dot" style="background:var(--coral);"></div>
+        <div class="usage-card-title">Coral is for action</div>
+        <div class="usage-card-body">Use coral for CTAs, links, active states, and key emphasis. It signals energy, urgency, and warmth. Never use it for large backgrounds on important text — contrast is critical.</div>
+      </div>
+      <div class="usage-card">
+        <div class="usage-dot" style="background:var(--blush);"></div>
+        <div class="usage-card-title">Blush is for breathing</div>
+        <div class="usage-card-body">Use blush and cream for backgrounds, cards, and subtle fills. They give the eye a place to rest. Blush is the pastel foundation that makes the coral pop without overwhelming.</div>
+      </div>
+      <div class="usage-card">
+        <div class="usage-dot" style="background:var(--sage);"></div>
+        <div class="usage-card-title">Sage is for positivity</div>
+        <div class="usage-card-body">Use sage sparingly for success states, positive indicators, and cool-temperature contrast. It balances the warm palette and prevents it from feeling one-dimensional.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION 03: TYPOGRAPHY ══ -->
+  <div class="section" id="typography">
+    <div class="section-eyebrow"><span class="section-num">03</span></div>
+    <h2 class="section-title">Typography</h2>
+    <p class="section-desc">Two typefaces. Fraunces for character and warmth — it has personality in the headlines. Outfit for clarity and approachability — it's clean without being cold.</p>
+
+    <!-- Fraunces showcase -->
+    <div class="type-showcase">
+      <div class="type-family-label">Display — Fraunces</div>
+      <div class="type-specimen-fraunces">Meetings that<br>snap into place.<br><em>Guaranteed.</em></div>
+      <div class="type-name">Fraunces · Optical size variable · Weights: 300 (italic), 700, 900</div>
+    </div>
+
+    <!-- Outfit showcase -->
+    <div class="type-showcase" style="background:var(--charcoal);border-color:transparent;">
+      <div class="type-family-label" style="color:var(--amber);">Body — Outfit</div>
+      <div class="type-specimen-outfit" style="color:rgba(255,255,255,0.7);">SnapGrowth delivers qualified meetings with decision-makers — not just emails sent. Every campaign is backed by a contractual guarantee, powered by AI, and guided by consulting-grade ICP strategy.</div>
+      <div class="type-name" style="color:rgba(255,255,255,0.3);">Outfit · Weights: 300, 400, 500, 600, 700</div>
+    </div>
+
+    <!-- Type scale -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;margin-top:32px;">TYPE SCALE</div>
+    <div style="background:var(--warm-white);border:1.5px solid var(--rule);border-radius:16px;padding:32px 40px;">
+      <div class="type-scale">
+        <div class="type-scale-row">
+          <div class="type-scale-label">Display</div>
+          <div style="font-family:'Fraunces',serif;font-size:64px;font-weight:900;line-height:1;letter-spacing:-0.04em;color:var(--charcoal);">The headline</div>
+          <div class="type-scale-size">64px / 900</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">H1</div>
+          <div style="font-family:'Fraunces',serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:var(--charcoal);">Page title</div>
+          <div class="type-scale-size">40px / 700</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">H2</div>
+          <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:var(--charcoal);">Section heading</div>
+          <div class="type-scale-size">28px / 700</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">H3</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;line-height:1.3;color:var(--charcoal);">Subsection title</div>
+          <div class="type-scale-size">18px / 600</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">Body</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:var(--smoke);">Body text — readable, friendly, never cramped. Used for paragraphs, descriptions, and all sustained reading.</div>
+          <div class="type-scale-size">15px / 400</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">Caption</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;line-height:1.5;color:var(--mist);">Labels, captions, metadata, legal text</div>
+          <div class="type-scale-size">12px / 500</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-label">Label</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);">EYEBROW LABEL · CATEGORY</div>
+          <div class="type-scale-size">10px / 700</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION 04: LOGO USAGE ══ -->
+  <div class="section" id="usage">
+    <div class="section-eyebrow"><span class="section-num">04</span></div>
+    <h2 class="section-title">Logo Usage</h2>
+    <p class="section-desc">Consistent, respectful use of the logo protects the brand's visual equity. These rules exist so the mark always looks intentional.</p>
+
+    <!-- Clear space -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;">CLEAR SPACE</div>
+    <div class="clearspace-demo">
+      <div class="clearspace-inner">
+        <div style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--coral);font-weight:600;white-space:nowrap;">× height of mark</div>
+        <div style="position:absolute;left:-22px;top:50%;transform:translateY(-50%) rotate(-90deg);font-size:11px;color:var(--coral);font-weight:600;white-space:nowrap;">× height of mark</div>
+        <div class="logo-lockup">
+          <svg width="44" height="44" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="cs1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#cs1)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="logo-wordmark wm-dark" style="font-size:22px;">Snap<span>Growth</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--smoke);margin-bottom:32px;">Always maintain clear space equal to the height of the symbol mark on all four sides. No other elements — text, images, or decorative elements — should enter this zone.</p>
+
+    <!-- Dos and Don'ts -->
+    <div class="usage-dos-donts">
+      <div class="dos-card">
+        <div class="usage-card-heading"><span class="usage-check">✓</span> Do</div>
+        <div class="usage-rule">Use the logo on white, cream, blush, dark, and coral backgrounds</div>
+        <div class="usage-rule">Use the gradient mark on light backgrounds and white/ghost mark on dark or coral</div>
+        <div class="usage-rule">Maintain the wordmark in Fraunces Bold only — never substitute another typeface</div>
+        <div class="usage-rule">Scale proportionally — lock the aspect ratio always</div>
+        <div class="usage-rule">Use the symbol mark alone only at sizes where the wordmark becomes illegible (&lt;120px wide)</div>
+      </div>
+      <div class="donts-card">
+        <div class="usage-card-heading"><span class="usage-cross">✕</span> Don't</div>
+        <div class="usage-rule">Stretch, squish, or rotate the logo</div>
+        <div class="usage-rule">Change any of the logo colors individually</div>
+        <div class="usage-rule">Add drop shadows, outlines, or effects to the logo</div>
+        <div class="usage-rule">Place the logo on a busy photo or patterned background without a clear zone</div>
+        <div class="usage-rule">Use the logo at sizes smaller than 120px wide for the full lockup</div>
+        <div class="usage-rule">Recreate the logo in another application — always use the approved SVG file</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION 05: BRAND VOICE ══ -->
+  <div class="section" id="voice">
+    <div class="section-eyebrow"><span class="section-num">05</span></div>
+    <h2 class="section-title">Brand Voice</h2>
+    <p class="section-desc">SnapGrowth sounds like a confident friend who happens to be an expert. Direct without being blunt. Warm without being fluffy. The guarantee means every word has to earn its place.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card vc-1">
+        <div style="font-size:28px;">🎯</div>
+        <div class="voice-trait">Direct</div>
+        <div class="voice-not">Not → blunt or aggressive</div>
+        <div class="voice-desc">We say what we mean. No jargon, no padding, no hedging. If we guarantee 12 meetings, we say "12 meetings" — not "approximately 10-14 qualified interactions per calendar period."</div>
+      </div>
+      <div class="voice-card vc-2">
+        <div style="font-size:28px;">☀️</div>
+        <div class="voice-trait">Warm</div>
+        <div class="voice-not">Not → cheesy or sycophantic</div>
+        <div class="voice-desc">We genuinely care about client success. The warmth comes from confidence, not flattery. We don't say "great question!" We say "here's the answer."</div>
+      </div>
+      <div class="voice-card vc-3">
+        <div style="font-size:28px;">⚡</div>
+        <div class="voice-trait">Energetic</div>
+        <div class="voice-not">Not → breathless or hyped</div>
+        <div class="voice-desc">There's momentum in everything we write. Short sentences. Active voice. Verbs that move. We don't describe what we do — we show what happens next for the client.</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;">TONE IN ACTION</div>
+    <div class="tone-examples">
+      <div class="tone-example">
+        <div class="tone-example-header tone-do-header">✓ SnapGrowth says this</div>
+        <div class="tone-example-body">"We guarantee 12 qualified meetings per month — or the next month is free. First campaigns live in 7 days."</div>
+      </div>
+      <div class="tone-example">
+        <div class="tone-example-header tone-dont-header">✕ Not this</div>
+        <div class="tone-example-body">"Our AI-powered platform leverages cutting-edge machine learning algorithms to potentially optimise your lead generation funnel."</div>
+      </div>
+      <div class="tone-example">
+        <div class="tone-example-header tone-do-header">✓ SnapGrowth says this</div>
+        <div class="tone-example-body">"Your team should be closing deals, not making cold calls. We fill the calendar — you focus on the handshake."</div>
+      </div>
+      <div class="tone-example">
+        <div class="tone-example-header tone-dont-header">✕ Not this</div>
+        <div class="tone-example-body">"We are pleased to offer a comprehensive suite of B2B demand generation solutions designed to enhance your sales pipeline efficiency."</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION 06: APPLICATIONS ══ -->
+  <div class="section" id="applications">
+    <div class="section-eyebrow"><span class="section-num">06</span></div>
+    <h2 class="section-title">Applications</h2>
+    <p class="section-desc">How the brand shows up in the real world — email signatures, business cards, and digital surfaces.</p>
+
+    <!-- Email signature -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;">EMAIL SIGNATURE</div>
+    <div class="email-sig-demo">
+      <div style="font-size:13px;color:var(--mist);margin-bottom:24px;font-style:italic;">— email body above this line —</div>
+      <div style="width:100%;height:1px;background:var(--rule);margin-bottom:24px;"></div>
+      <div class="sig-wrapper">
+        <div class="sig-name">De Villiers</div>
+        <div class="sig-title">Founder · SnapGrowth</div>
+        <div class="sig-divider"></div>
+        <div class="sig-detail">📧 <a href="mailto:dv@snapgrowth.ai">dv@snapgrowth.ai</a></div>
+        <div class="sig-detail">🌐 <a href="#">snapgrowth.ai</a></div>
+        <div class="sig-detail">📅 <a href="#">Book a call</a></div>
+        <div class="sig-logo-row">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="sig1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#sig1)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sig-logo-text">Snap<span>Growth</span></span>
+          <span class="sig-tagline">· Meetings that snap into place.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business card -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:16px;margin-top:40px;">BUSINESS CARD</div>
+    <div class="card-demo">
+      <!-- Front -->
+      <div class="biz-card biz-card-front">
+        <div class="cover-blob" style="width:200px;height:200px;top:-80px;right:-60px;background:var(--coral);filter:blur(50px);opacity:0.2;"></div>
+        <div class="cover-blob" style="width:150px;height:150px;bottom:-40px;left:-40px;background:var(--amber);filter:blur(40px);opacity:0.15;"></div>
+        <div>
+          <div class="biz-card-name">De Villiers</div>
+          <div class="biz-card-title">Founder · SnapGrowth</div>
+        </div>
+        <div class="biz-card-contact">
+          <div>dv@snapgrowth.ai</div>
+          <div>snapgrowth.ai</div>
+        </div>
+      </div>
+      <!-- Back -->
+      <div class="biz-card biz-card-back">
+        <div class="biz-card-back-logo">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="bc1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#bc1)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="biz-card-back-wordmark">Snap<span>Growth</span></div>
+        </div>
+        <div>
+          <div class="biz-card-back-tagline">"Meetings that snap into place. Guaranteed."</div>
+          <div class="biz-card-back-url" style="margin-top:8px;">snapgrowth.ai</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tagline lockup -->
+    <div style="margin-top:40px;background:linear-gradient(135deg,#FF6B5E 0%,#FFAB5E 100%);border-radius:20px;padding:48px;text-align:center;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;">BRAND TAGLINE</div>
+      <div style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,40px);font-weight:700;color:white;letter-spacing:-0.02em;line-height:1.2;">"Meetings that snap into place.<br><em style="font-weight:300;">Guaranteed.</em>"</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:16px;">Use in hero sections, email footers, and presentation covers</div>
+    </div>
+
+  </div><!-- /applications -->
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div class="footer-logo">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="fl1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FF6B5E"/><stop offset="100%" stop-color="#FFAB5E"/></linearGradient></defs><rect x="3" y="3" width="58" height="58" rx="16" fill="url(#fl1)"/><polyline points="13,46 26,28 33,36 51,16" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="footer-wordmark">Snap<span>Growth</span></span>
+  </div>
+  <div class="footer-text">Brand Guidelines V1.0 · March 2026 · <strong>JigsawAI</strong> Initiative</div>
+  <div class="footer-text">De Villiers (Lead) · Marinus (Collaborator) · CONFIDENTIAL</div>
+</div>
+
+</body>
+</html>

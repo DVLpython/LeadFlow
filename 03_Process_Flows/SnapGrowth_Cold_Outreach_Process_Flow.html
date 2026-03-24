@@ -4,30 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SnapGrowth — Cold Outreach Process Flow</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink:        #0D1117;
-    --ink-soft:   #3D4451;
-    --ink-muted:  #7A8394;
-    --paper:      #F7F6F2;
-    --paper-warm: #EDEAE3;
-    --snap:       #00C896;
-    --snap-dark:  #009970;
-    --snap-glow:  rgba(0,200,150,0.12);
-    --amber:      #F5A623;
-    --amber-soft: rgba(245,166,35,0.12);
-    --sky:        #3B82F6;
-    --sky-soft:   rgba(59,130,246,0.10);
-    --rose:       #F43F5E;
-    --rose-soft:  rgba(244,63,94,0.10);
-    --rule:       rgba(13,17,23,0.08);
+    --ink:        #2C2826;
+    --ink-soft:   #5C4D47;
+    --ink-muted:  #8C7B75;
+    --paper:      #FFF8F3;
+    --paper-warm: #FFF0EB;
+    --snap:       #FF6B5E;
+    --snap-dark:  #E5503F;
+    --snap-glow:  rgba(255,107,94,0.12);
+    --amber:      #FFAB5E;
+    --amber-soft: rgba(255,171,94,0.15);
+    --sky:        #A8D5BA;
+    --sky-soft:   rgba(168,213,186,0.18);
+    --rose:       #C9B8E8;
+    --rose-soft:  rgba(201,184,232,0.18);
+    --rule:       rgba(44,40,38,0.10);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
@@ -50,7 +50,7 @@
     pointer-events: none;
   }
   .cover-eyebrow {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -59,7 +59,7 @@
     margin-bottom: 20px;
   }
   .cover-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(36px, 5vw, 64px);
     font-weight: 800;
     line-height: 1.05;
@@ -94,7 +94,7 @@
     color: rgba(255,255,255,0.35);
   }
   .cover-meta-value {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 14px;
     font-weight: 600;
     color: rgba(255,255,255,0.85);
@@ -112,7 +112,7 @@
 
   .section { margin-bottom: 72px; }
   .section-label {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.22em;
@@ -121,7 +121,7 @@
     margin-bottom: 12px;
   }
   .section-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(22px, 3vw, 30px);
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -167,7 +167,7 @@
     flex-shrink: 0;
   }
   .arch-layer-name {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -198,7 +198,7 @@
     flex-shrink: 0;
   }
   .arch-mailbox-addr {
-    font-family: 'DM Sans', monospace;
+    font-family: 'Outfit', sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
@@ -292,7 +292,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 18px;
     font-weight: 800;
     border: 2px solid #fff;
@@ -317,7 +317,7 @@
     gap: 12px;
   }
   .journey-content-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--ink);
@@ -354,7 +354,7 @@
 
   /* tag variants */
   .tag-snap { background: var(--snap-glow); color: var(--snap-dark); }
-  .tag-amber { background: var(--amber-soft); color: #B47A10; }
+  .tag-amber { background: var(--amber-soft); color: #B85C2A; }
   .tag-sky { background: var(--sky-soft); color: var(--sky); }
   .tag-rose { background: var(--rose-soft); color: var(--rose); }
   .tag-ink { background: rgba(13,17,23,0.06); color: var(--ink-soft); }
@@ -390,13 +390,13 @@
 
   .branch-icon { font-size: 24px; margin-bottom: 10px; }
   .branch-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 8px;
   }
   .branch-snap .branch-title { color: var(--snap-dark); }
-  .branch-amber .branch-title { color: #B47A10; }
+  .branch-amber .branch-title { color: #B85C2A; }
   .branch-rose .branch-title { color: var(--rose); }
   .branch-body { font-size: 12.5px; color: var(--ink-soft); line-height: 1.6; }
 
@@ -429,7 +429,7 @@
   }
   .workflow-icon { font-size: 22px; margin-bottom: 10px; }
   .workflow-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 13px;
     font-weight: 700;
     color: var(--ink);
@@ -469,7 +469,7 @@
     flex-shrink: 0;
   }
   .tool-name {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 13px;
     font-weight: 700;
     color: var(--ink);
@@ -503,7 +503,7 @@
     margin-top: 2px;
   }
   .callout-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 16px;
     font-weight: 800;
     color: var(--snap);
@@ -876,7 +876,7 @@
     </div>
 
     <div style="margin-top:20px;padding:18px 24px;background:var(--amber-soft);border-radius:12px;border-left:3px solid var(--amber);">
-      <strong style="font-size:12px;color:#B47A10;letter-spacing:0.1em;text-transform:uppercase;">Month 4 Handover</strong>
+      <strong style="font-size:12px;color:#B85C2A;letter-spacing:0.1em;text-transform:uppercase;">Month 4 Handover</strong>
       <p style="font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.6;">From Month 4, the VA takes over: daily inbox triage, weekly report distribution, CRM hygiene. De Villiers drops to 6 hours/week — strategic oversight and closing new clients only.</p>
     </div>
 
@@ -924,7 +924,7 @@
           <div class="tool-name">Apollo.io</div>
           <div class="tool-role">275M+ contact database. Builds verified prospect lists by ICP criteria — role, company size, revenue, growth signals.</div>
         </div>
-        <div class="tool-badge" style="background:var(--amber-soft);color:#B47A10;">Data</div>
+        <div class="tool-badge" style="background:var(--amber-soft);color:#B85C2A;">Data</div>
       </div>
 
       <div class="tool-card">
@@ -960,7 +960,7 @@
           <div class="tool-name">LinkedIn (Expandi)</div>
           <div class="tool-role">Automated LinkedIn connection requests and follow-up messages. Multi-channel effect — prospects see SnapGrowth on email AND LinkedIn.</div>
         </div>
-        <div class="tool-badge" style="background:var(--amber-soft);color:#B47A10;">LinkedIn</div>
+        <div class="tool-badge" style="background:var(--amber-soft);color:#B85C2A;">LinkedIn</div>
       </div>
 
       <div class="tool-card">
